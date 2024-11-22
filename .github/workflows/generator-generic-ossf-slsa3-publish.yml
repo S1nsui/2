@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Clone</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0071c2, #005a99);
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            background: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hotel-list {
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .hotel {
+            background: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .hotel h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #0071c2;
+        }
+
+        .hotel p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .gallery img {
+            border-radius: 5px;
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .hotel button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #0071c2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .hotel button:hover {
+            background-color: #005a99;
+        }
+
+        .feedback-form {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-form h2 {
+            text-align: center;
+            color: #0071c2;
+        }
+
+        .feedback-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .feedback-form input, .feedback-form textarea, .feedback-form button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .feedback-form button {
+            background-color: #0071c2;
+            color: white;
+            cursor: pointer;
+        }
+
+        .feedback-form button:hover {
+            background-color: #005a99;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Find Your Perfect Stay</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#hotels">Hotels</a>
+        <a href="#admin">Admin</a>
+        <a href="#feedback">Feedback</a>
+    </nav>
+<div class="register-form">
+    <h2>Register</h2>
+    <form action="register_user.php" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+</div>
+
+    <!-- Hotel List -->
+    <div id="hotels" class="hotel-list">
+        <!-- Hotel content as before -->
+    </div>
+<div class="login-form">
+    <h2>Login</h2>
+    <form action="login.php" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="register.html">Register here</a></p>
+</div>
+<form action="process_payment.php" method="POST">
+    <input type="text" name="card_number" placeholder="Card Number" required>
+    <input type="text" name="card_name" placeholder="Name on Card" required>
+    <input type="text" name="expiry_date" placeholder="MM/YY" required>
+    <input type="text" name="cvv" placeholder="CVV" required>
+    <button type="submit">Pay Now</button>
+</form>
+
+    <!-- Feedback Form -->
+    <div id="feedback" class="feedback-form">
+        <h2>Contact Us</h2>
+        <form action="submit_feedback.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Feedback</button>
+        </form>
+    </div>
+
+
+<!-- Hotel 1 -->
+<div class="hotel">
+<h3>Signiel Seoul</h3>
+<p>Location: South Korea</p>
+<p>Price: min $640/night</p>
+<p><strong>Hotel and Territory:</strong></p>
+<div class="gallery">
+<div class="gallery">
+    <img src="hotel1.jpg" alt="Hotel 1">
+    <img src="hotel2.jpg" alt="Hotel 2">
+    <img src="hotel3.jpg" alt="Hotel 3">
+    <img src="hotel4.jpg" alt="Hotel 4">
+    <img src="hotel5.jpg" alt="Hotel 5">
+</div>
+
+</div>
+<p><strong>Standard Room:</strong></p>
+<div class="gallery">
+    <img src="room1.jpg" alt="Room ">
+    <img src="room2.jpg" alt="Room ">
+    <img src="room3.jpg" alt="Room ">
+
+</div>
+<p><strong>VIP Room:</strong></p>
+<div class="gallery">
+    <img src="room4.jpg" alt="Room ">
+    <img src="room5.jpg" alt="Room ">
+    <img src="room6.jpg" alt="Room ">
+    <img src="room7.jpg" alt="Room ">
+    <img src="room8.jpg" alt="Room ">
+</div>
+
+    <button>Book Now</button>
+
+        <!-- Hotel 2 -->
+        <div class="hotel">
+            <h3>Taj Falaknuma Palace</h3>
+            <p>Location: Hyderabad, India</p>
+            <p>Price: $2066/3night</p>
+            <p><strong>Hotel and Territory:</strong></p>
+            <div class="gallery">
+<div class="gallery">
+    <img src="hotel5.jpg" alt="Hotel 1">
+    <img src="hotel6.jpg" alt="Hotel 2">
+    <img src="hotel7.jpg" alt="Hotel 3">
+    <img src="hotel8.jpg" alt="Hotel 4">
+</div>
+
+</div>
+<p><strong>Standard Room:</strong></p>
+<div class="gallery">
+    <img src="room9.jpg" alt="Room ">
+    <img src="room10.jpg" alt="Room ">
+    <img src="room11.jpg" alt="Room ">
+    <img src="room12.jpg" alt="Room ">
+</div>
+<p><strong>VIP Room:</strong></p>
+<div class="gallery">
+    <img src="room14.jpg" alt="Room ">
+    <img src="room15.jpg" alt="Room ">
+    <img src="room16.jpg" alt="Room ">
+    <img src="room17.jpg" alt="Room ">
+    <img src="room18.jpg" alt="Room ">
+</div>
+    <button>Book Now</button>
+
+        <!-- Hotel 3 -->
+        <div class="hotel">
+            <h3>Beachfront Paradise</h3>
+            <p>Location: Miami</p>
+            <p>Price: $2700/3night</p>
+            <p><strong>Hotel and Territory:</strong></p>
+            <div class="gallery">
+<div class="gallery">
+    <img src="hotel9.jpg" alt="Hotel 1">
+    <img src="hotel10.jpg" alt="Hotel 2">
+    <img src="hotel11.jpg" alt="Hotel 3">
+    <img src="hotel12.jpg" alt="Hotel 4">
+</div>
+
+</div>
+<p><strong>Standard Room:</strong></p>
+<div class="gallery">
+    <img src="room19.jpg" alt="Room ">
+    <img src="room20.jpg" alt="Room ">
+    <img src="room21.jpg" alt="Room ">
+    <img src="room22.jpg" alt="Room ">
+    <img src="room23.jpg" alt="Room ">
+</div>
+<p><strong>VIP Room:</strong></p>
+<div class="gallery">
+    <img src="room24.jpg" alt="Room ">
+    <img src="room25.jpg" alt="Room ">
+    <img src="room26.jpg" alt="Room ">
+    <img src="room27.jpg" alt="Room ">
+    <img src="room28.jpg" alt="Room ">
+    <img src="room29.jpg" alt="Room ">
+</div>
+    <button>Book Now</button>
+    <div class="hotel-list">
+
+        <!-- Hotel 1 -->
+        <div class="hotel">
+            <h3>Signiel Seoul</h3>
+            <p>Location: South Korea</p>
+            <p>Price: $640/night</p>
+            <div class="gallery">
+                <img src="hotel1.jpg" alt="Hotel 1">
+                <img src="hotel2.jpg" alt="Hotel 2">
+            </div>
+            <div class="video-container">
+                <video controls width="100%">
+                    <source src="signiel_ad.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+            </div>
+            <div class="rating">
+                <span>⭐️⭐️⭐️⭐️⭐️</span>
+                <p>(4.8/5 - 230 reviews)</p>
+            </div>
+            <div class="room-status">
+                <button onclick="alert('Total Rooms: 100, Available: 25, Booked: 75')">Room Status</button>
+            </div>
+            <div class="reviews">
+                <h4>Customer Reviews</h4>
+                <div class="review">
+                    <p><strong>John Doe:</strong> Amazing hotel with great service!</p>
+                </div>
+                <div class="review">
+                    <p><strong>Jane Smith:</strong> Wonderful views and amenities.</p>
+                </div>
+            </div>
+            <button>Book Now</button>
+        </div>
+
+    <!-- Admin Section -->
+    <div id="admin" class="feedback-form">
+        <h2>Admin Panel</h2>
+        <form action="manage_bookings.php" method="POST">
+            <button type="submit">View Bookings</button>
+        </form>
+        <form action="manage_inventory.php" method="POST">
+            <button type="submit">Manage Hotels</button>
+        </form>
+    </div>
+</body>
+</html>
